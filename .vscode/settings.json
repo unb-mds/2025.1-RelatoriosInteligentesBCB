@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Projeto MDS",
+            "group": "devs",
+            "database": "Relatório Financeiro",
+            "username": "dev MDS"
+        }
+    ]
+}
