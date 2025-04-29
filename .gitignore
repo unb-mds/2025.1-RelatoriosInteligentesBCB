@@ -1,2 +1,19 @@
-"2025-1-Squad07/" 
-"2025-1-Squad07/" 
+# Ambientes virtuais
+venv/
+env/
+
+# Arquivos de cache Python
+__pycache__/
+*.py[cod]
+
+# Banco de dados SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Arquivos de modelo salvos
+models/
+
+# Arquivos do sistema
+.DS_Store
+>>>>>>> projeto-dados-economicos/main
