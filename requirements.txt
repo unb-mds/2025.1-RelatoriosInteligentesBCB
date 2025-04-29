@@ -8,6 +8,8 @@ pandas
 numpy
 requests
 sqlalchemy
+matplotlib
+seaborn
 plotly
 scikit-learn
-matplotlib
+joblib
