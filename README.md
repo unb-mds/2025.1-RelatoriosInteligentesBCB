@@ -1,9 +1,10 @@
 # 📊 Projeto de Relatórios Inteligentes — IPEADATA
 
-## 🧠 Sobre o Projeto
-O foco deste projeto é a geração automática de relatórios inteligentes para análise dos dados Financeiros do IPEA através de uma interface intuitiva no Streamlit feita para os gestores públicos do IPEA. 
+## Sobre o Projeto
+O foco deste projeto é a geração automática de relatórios inteligentes para análise dos dados Financeiros do IPEA através de uma interface intuitiva no Streamlit feita para os gestores públicos do IPEA.
+Já é possível acessar o projeto provisóriamente pelo link: https://relatorioipea-mds.streamlit.app/ 
 
-## 👥 Integrantes do Projeto:
+## Integrantes do Projeto:
 
 * Bruno Henryque Grangeiro [Product Owner]
 
