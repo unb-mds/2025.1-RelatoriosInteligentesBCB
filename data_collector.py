@@ -17,6 +17,9 @@ class BCBDataCollector:
             'selic': 11,          # Taxa SELIC diária
             'selic_meta': 4189,   # Meta da taxa SELIC
             'transacoes': 22707,  # Balanço de Pagamentos: Saldo em Transações Correntes
+            'cambio_dolar': 1,    # Taxa de Câmbio - Dólar (Diário)
+            'igpm': 189,          #	Índice geral de preços do mercado (IGP-M)
+            'inpc': 188,          # Índice nacional de preços ao consumidor (INPC)
             'resultado_primario': 7547  # Indicadores Fiscais: Resultado Primário
         }
     
