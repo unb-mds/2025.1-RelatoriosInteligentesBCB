@@ -29,6 +29,9 @@ class DatabaseManager:
             'selic',            # Taxa SELIC diária
             'selic_meta',       # Meta da taxa SELIC
             'transacoes',       # Balanço de Pagamentos: Saldo em Transações Correntes
+            'cambio_dolar',     # Taxa de Câmbio - Dólar (Diário)
+            'igpm',             # Índice geral de preços do mercado (IGP-M)
+            'inpc',             # Índice nacional de preços ao consumidor (INPC)
             'resultado_primario' # Indicadores Fiscais: Resultado Primário
         ]
         
