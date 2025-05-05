@@ -103,6 +103,9 @@ def dashboard_page():
         'selic': 'Taxa SELIC Diária',
         'selic_meta': 'Meta da Taxa SELIC',
         'transacoes': 'Saldo em Transações Correntes',
+        'cambio_dolar': 'Taxa de Câmbio do Dólar Diária',
+        'igpm': 'Índice geral de preços do mercado (IGP-M)',
+        'inpc': 'Índice nacional de preços ao consumidor (INPC)',
         'resultado_primario': 'Resultado Primário'
     }
     
@@ -187,6 +190,9 @@ def ml_page():
         'selic': 'Taxa SELIC Diária',
         'selic_meta': 'Meta da Taxa SELIC',
         'transacoes': 'Saldo em Transações Correntes',
+        'cambio_dolar': 'Taxa de Câmbio do Dólar Diária',
+        'igpm': 'Índice geral de preços do mercado (IGP-M)',
+        'inpc': 'Índice nacional de preços ao consumidor (INPC)',
         'resultado_primario': 'Resultado Primário'
     }
     
