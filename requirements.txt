@@ -1,0 +1,15 @@
+# Arquivo: requirements.txt
+
+
+
+
+streamlit
+pandas
+numpy
+requests
+sqlalchemy
+matplotlib
+seaborn
+plotly
+scikit-learn
+joblib
