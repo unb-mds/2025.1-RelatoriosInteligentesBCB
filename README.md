@@ -31,32 +31,16 @@ A solução é desenvolvida com **Streamlit**, utilizando **modelos de NLP open 
 
 ---
 
-## 📂 Estrutura das Branches
+## 🖥️ Como Rodar Localmente
 
-A estrutura de branches foi organizada para facilitar o desenvolvimento das diferentes etapas do projeto. Cada branch está direcionada para uma área específica de trabalho:
+Para executar o projeto localmente, siga esta sequência de comandos no terminal:
 
-- **`dev`**: A branch principal que contém o código de produção. Qualquer alteração que deva ser implementada no Streamlit e gerada no app deve ser feita aqui. Essa é a branch que faz o deploy com o Streamlit.
+```bash
+# 1. Instale as dependências do projeto
+python setup.py install
 
-- **`coleta_dados`**: Focada na **coleta de dados econômicos** através de APIs. Nessa branch, são implementadas funcionalidades relacionadas ao tratamento e armazenamento dos dados financeiros para posterior análise.
+# 2. Realize a coleta de dados iniciais
+python data_collector.py
 
-- **`dashboard_economico`**: Direcionada para a **geração de dashboards** interativos. Nessa branch, são desenvolvidas as funcionalidades e layouts para a visualização de dados, com foco na experiência de visualização para os usuários do IPEA.
-
-- **`previsao_ml`**: Focada no **filtro de previsão dos dados**. Essa branch é responsável pela aplicação de modelos de Machine Learning para fazer previsões e gerar insights sobre os dados econômicos analisados.
-
-Essas branches são de trabalho e garantem que cada equipe se concentre em uma parte específica do projeto, garantindo um fluxo de desenvolvimento mais organizado.
-
----
-
-## Integrantes do Projeto:
-
-* Bruno Henryque Grangeiro [Product Owner]
-* Rafael Silva Wasconselos [Scrum Master]
-* Anna Julia Primo
-* Gabriel Guedes Fernandes
-* Henrique Fontenelle Galvão
-* Jhulia Cristina Gomes
-* Lorena Ribeiro Martins
-* Luis Gustavo Lopes
-
-### Nossa organização pelo Miro
-[https://miro.com/app/board/uXjVIJxt3qo=/](https://miro.com/app/board/uXjVIJxt3qo=/)
+# 3. Execute a aplicação no navegador com Streamlit
+streamlit run main.py
