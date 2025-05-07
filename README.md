@@ -28,8 +28,6 @@ A solução é desenvolvida com **Streamlit**, utilizando **modelos de NLP open 
 - **Pandas / NumPy**
 - **Plotly / Matplotlib**
 - **Modelos NLP (BERTTopic, spaCy, etc.)**
-- **HTML/CSS** customizado para layout e estilo
-
 ---
 ## Integrantes do Projeto:
 
