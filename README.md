@@ -9,6 +9,8 @@ A solução é desenvolvida com **Streamlit**, utilizando **modelos de NLP open 
 🔗 Acesse a versão provisória: [https://relatorioipea-mds.streamlit.app](https://relatorioipea-mds.streamlit.app)  
 🌿 Branch ativa: `dev` (atualize os arquivos nela para refletir no app).
 
+📓 Documentação das etapas de densenvolvimento do projeto: [https://miro.com/app/board/uXjVIJxt3qo=/]
+
 ---
 
 ## 🚀 Funcionalidades
