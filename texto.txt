@@ -1,5 +1,0 @@
-pip freeze -> mostra dependencias instaladas
-
-cd .venv\Scripts\activate.bat -> inicia o .venv 
-
-@set "PATH=%PATH%;C:\Program Files\Git\bin;C:\Program Files\Git\cmd"

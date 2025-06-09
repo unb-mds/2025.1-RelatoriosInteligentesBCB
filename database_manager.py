@@ -4,9 +4,10 @@ import pandas as pd
 from sqlalchemy import create_engine
 import os
 from datetime import datetime
+from config import DATABASE_NAME, BCB_INDICATOR_SERIES_MAP
 
 class DatabaseManager:
-    def __init__(self, db_name='economic_data.db'):
+    def __init__(self, db_name=DATABASE_NAME):
         """Inicializa o gerenciador de banco de dados SQLite"""
         self.db_path = db_name
         self.engine = create_engine(f'sqlite:///{db_name}')
@@ -22,18 +23,7 @@ class DatabaseManager:
         cursor = conn.cursor()
         
         # Indicadores do BCB
-        indicators = [
-            'ipca',             # Inflação: IPCA
-            'pib',              # Atividade Econômica: PIB Real
-            'divida_pib',       # Dívida Pública: Relação Dívida/PIB
-            'selic',            # Taxa SELIC diária
-            'selic_meta',       # Meta da taxa SELIC
-            'transacoes',       # Balanço de Pagamentos: Saldo em Transações Correntes
-            'cambio_dolar',     # Taxa de Câmbio - Dólar (Diário)
-            'igpm',             # Índice geral de preços do mercado (IGP-M)
-            'inpc',             # Índice nacional de preços ao consumidor (INPC)
-            'resultado_primario' # Indicadores Fiscais: Resultado Primário
-        ]
+        indicators = list(BCB_INDICATOR_SERIES_MAP.keys()) 
         
         for indicator in indicators:
             cursor.execute(f'''
