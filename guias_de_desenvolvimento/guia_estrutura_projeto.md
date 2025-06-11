@@ -38,10 +38,10 @@ A estrutura de pastas e arquivos do nosso projeto está organizada assim:
 │ └── ...
 │
 └── guias_de_desenvolvimento/
-├── guia_estrutura_projeto.md
-├── guia_execucao_task_git.md
-├── guia_padrao_commits.md
-└── guia_estrutura_PR.md
+  ├── guia_estrutura_projeto.md
+  ├── guia_execucao_task_git.md
+  ├── guia_padrao_commits.md
+  └── guia_estrutura_PR.md
 
 ---
 
