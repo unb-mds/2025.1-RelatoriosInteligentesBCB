@@ -23,14 +23,10 @@ Esta PR adiciona a inteligência de **Processamento de Linguagem Natural (NLP)**
 * Verifique a clareza e gramática do texto gerado pela função `generate_nlp_report`.
 
 ### Checklist do Desenvolvedor:
-- [x] O código segue o estilo de código (PEP 8)?
 - [x] O código foi testado localmente e está funcionando conforme o esperado?
 - [ ] Todos os comentários e código legado desnecessário foram removidos?
 - [ ] O README (ou outra documentação) foi atualizado, se necessário?
-- [ ] Todas as dependências externas foram listadas no `requirements.txt` (se houver novas)?
+- [ ] Todas as dependências externas foram listadas no `setup.py` (se houver novas)?
 
----
 
-**Revisores:**
-@nome_do_revisor1
-@nome_do_revisor2
+
