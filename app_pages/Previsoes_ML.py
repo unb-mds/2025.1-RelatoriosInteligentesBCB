@@ -22,7 +22,7 @@ def ml_page():
             with st.spinner("Calculando previsão..."):
                 time.sleep(2)
                 
-                future_df = simulate_forecast(data, forecast_periods) 
+                future_df = simulate_forecast(data, forecast_periods+1) 
 
                 historical_df = pd.DataFrame({'date': data['date'].tail(12), 'value': data['value'].tail(12), 'tipo': 'Histórico'})
                 combined_df = pd.concat([historical_df, future_df])
