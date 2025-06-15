@@ -14,6 +14,7 @@ def install_requirements():
         "sqlalchemy",
         "scikit-learn",
         "plotly"
+        "prophet"
     ]
     for package in packages:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
