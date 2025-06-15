@@ -1,5 +1,6 @@
 # ml_core/forecaster.py
 import pandas as pd
+from prophet import Prophet
 from datetime import datetime, timedelta
 
 def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
@@ -14,18 +15,19 @@ def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
     Returns:
         pd.DataFrame: DataFrame contendo as datas e valores simulados da previsão.
     """
+
     if data.empty:
         return pd.DataFrame()
 
-    last_date = data['date'].max()
-    last_value = data.loc[data['date'] == last_date, 'value'].values[0]
+    history_df= data[['date', 'value']]
+    history_df.rename(columns={'date':'ds', 'value':'y'}, inplace=True)
+    
+    forecaster = Prophet()
 
-    # Trend fixo para a simulação.
-    # Em um modelo real, isso viria da análise do modelo.
-    trend = 0.05 
+    forecaster.fit(history_df)
+    forecasting_period = forecaster.make_future_dataframe(periods=periods, include_history=False, freq='ME')
+    forecast_df = forecaster.predict(forecasting_period)
 
-    future_dates = pd.date_range(start=last_date, periods=periods + 1, freq='M')[1:]
-    future_values = [last_value * (1 + trend * i) for i in range(1, periods + 1)]
+    future_df = pd.DataFrame({'date': forecast_df['ds'], 'value': forecast_df['yhat'], 'tipo': 'Previsão'})
 
-    future_df = pd.DataFrame({'date': future_dates, 'value': future_values, 'tipo': 'Previsão'})
     return future_df

@@ -28,6 +28,6 @@ def ml_page():
                 combined_df = pd.concat([historical_df, future_df])
                 fig = px.line(combined_df, x='date', y='value', color='tipo')
                 st.plotly_chart(fig, use_container_width=True)
-                st.success("Previsão concluída! (Simulação)")
+                st.success("Previsão concluída!")
     else:
         st.error(f"Não há dados disponíveis para {indicator_names[indicator]}.")
