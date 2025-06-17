@@ -1,7 +1,6 @@
 # ml_core/forecaster.py
 import pandas as pd
 from prophet import Prophet
-from datetime import datetime, timedelta
 
 def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
     """
@@ -31,3 +30,23 @@ def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
     future_df = pd.DataFrame({'date': forecast_df['ds'], 'value': forecast_df['yhat'], 'tipo': 'Previsão'})
 
     return future_df
+
+def calcular_estatisticas(df, nome):
+    """
+    Calcula estatísticas descritivas básicas para uma série temporal.
+
+    Args:
+        df (pd.DataFrame): DataFrame contendo uma coluna 'value' com os dados numéricos.
+        nome (str): Nome para identificar a série de estatísticas (usado como nome da Series retornada).
+
+    Returns:
+        pd.Series: Série contendo média, mediana, desvio padrão, mínimo e máximo dos valores.
+    """
+    return pd.Series({
+        'Média': df['value'].mean(),
+        'Mediana': df['value'].median(),
+        'Desvio Padrão': df['value'].std(),
+        'Mínimo': df['value'].min(),
+        'Máximo': df['value'].max()
+    }, name=nome)
+
