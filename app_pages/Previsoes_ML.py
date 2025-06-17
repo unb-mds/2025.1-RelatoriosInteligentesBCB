@@ -30,6 +30,7 @@ def ml_page():
                 st.plotly_chart(fig, use_container_width=True)
                 st.success("Previsão concluída!")
 
+
                 estat_hist = calcular_estatisticas(historical_df, 'Histórico')
                 estat_prev = calcular_estatisticas(future_df, 'Previsto')
                 tabela_estatisticas = pd.concat([estat_hist, estat_prev], axis=1)

@@ -1,6 +1,8 @@
 # ml_core/forecaster.py
 import pandas as pd
 from prophet import Prophet
+from datetime import datetime, timedelta
+
 
 def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
     """
