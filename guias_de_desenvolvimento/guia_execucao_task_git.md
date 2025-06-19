@@ -21,28 +21,10 @@ git clone <URL_DO_REPOSITÓRIO>
 cd 2025-1-Squad07
 ```
 
-### 1.3. Crie e Ative o Ambiente Virtual:
-
-```bash
-python -m venv venv
-```
-
-No Windows (PowerShell):
-
-```powershell
-.env\Scriptsctivate
-```
-
-No macOS/Linux (bash):
-
-```bash
-source venv/bin/activate
-```
-
 ### 1.4. Instale as Dependências:
 
 ```bash
-pip install -r requirements.txt
+python setup.py install
 ```
 
 ---

@@ -3,7 +3,7 @@ import plotly.express as px
 import pandas as pd
 import time
 from components.indicadores import indicator_names, load_data
-from ml_core.forecaster import simulate_forecast 
+from ml_core.forecaster import simulate_forecast, calcular_estatisticas
 
 def ml_page():
     st.title("Previsões de Indicadores Econômicos")
@@ -29,5 +29,13 @@ def ml_page():
                 fig = px.line(combined_df, x='date', y='value', color='tipo')
                 st.plotly_chart(fig, use_container_width=True)
                 st.success("Previsão concluída!")
+
+
+                estat_hist = calcular_estatisticas(historical_df, 'Histórico')
+                estat_prev = calcular_estatisticas(future_df, 'Previsto')
+                tabela_estatisticas = pd.concat([estat_hist, estat_prev], axis=1)
+
+                st.write("Tabela Estatística: Histórico vs Previsão")
+                st.table(tabela_estatisticas)
     else:
         st.error(f"Não há dados disponíveis para {indicator_names[indicator]}.")
