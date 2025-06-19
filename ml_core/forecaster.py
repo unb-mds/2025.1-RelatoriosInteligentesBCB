@@ -1,33 +1,36 @@
-# ml_core/forecaster.py
 import pandas as pd
 from prophet import Prophet
-from datetime import datetime, timedelta
 
 def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
     """
-    Simula uma previsão de dados com base nos últimos valores históricos.
-    Esta é uma simulação simples e deve ser substituída por um modelo de ML real.
-
+    Gera uma previsão de valores futuros com base em dados históricos usando o Prophet.
+    
     Args:
         data (pd.DataFrame): DataFrame histórico com colunas 'date' e 'value'.
-        periods (int): Número de meses para prever.
+        periods (int): Número de meses para prever (de 3 a 36).
 
     Returns:
-        pd.DataFrame: DataFrame contendo as datas e valores simulados da previsão.
+        pd.DataFrame: DataFrame contendo as datas e valores previstos.
     """
-
-    if data.empty:
+    if data.empty or periods < 3 or periods > 36:
         return pd.DataFrame()
 
-    history_df= data[['date', 'value']]
-    history_df.rename(columns={'date':'ds', 'value':'y'}, inplace=True)
+    # Preparar os dados
+    history_df = data[['date', 'value']].rename(columns={'date': 'ds', 'value': 'y'})
     
-    forecaster = Prophet()
-
-    forecaster.fit(history_df)
-    forecasting_period = forecaster.make_future_dataframe(periods=periods, include_history=False, freq='ME')
-    forecast_df = forecaster.predict(forecasting_period)
-
-    future_df = pd.DataFrame({'date': forecast_df['ds'], 'value': forecast_df['yhat'], 'tipo': 'Previsão'})
+    # Instanciar e treinar o modelo
+    model = Prophet()
+    model.fit(history_df)
+    
+    # Criar datas futuras com frequência mensal
+    future_dates = model.make_future_dataframe(periods=periods, include_history=False, freq='MS')  # 'MS' = início do mês
+    forecast = model.predict(future_dates)
+    
+    # Formatar a saída
+    future_df = pd.DataFrame({
+        'date': forecast['ds'],
+        'value': forecast['yhat'],
+        'tipo': 'Previsão'
+    })
 
     return future_df
