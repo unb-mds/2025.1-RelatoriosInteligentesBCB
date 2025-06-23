@@ -9,40 +9,45 @@ from datetime import datetime
 
 def ml_page():
     st.title("Previsões de Indicadores Econômicos")
-    
     indicator = st.selectbox(
         "Selecione o indicador para prever",
         list(indicator_names.keys()),
         format_func=lambda x: indicator_names.get(x, x)
     )
-
-
-    # Atualizado: permite previsão entre 3 e 36 meses
-    forecast_periods = st.slider("Número de meses para prever", min_value=3, max_value=36, value=6, step=1)
-
+    forecast_periods = st.slider("Número de meses para prever", 1, 12, 6)
+    
     data = load_data(indicator)
 
     if data is not None and not data.empty:
         st.subheader(f"Dados históricos de {indicator_names[indicator]}")
-
         fig_hist = px.line(data, x='date', y='value')
         st.plotly_chart(fig_hist, use_container_width=True)
-
 
         if st.button("Simular Previsão"):
             with st.spinner("Calculando previsão..."):
                 time.sleep(2) # Simulação de processamento
                 
                 future_df = simulate_forecast(data, forecast_periods)
+                future_df['tipo'] = 'Previsto'
 
-                historical_df = pd.DataFrame({
-                    'date': data['date'].tail(12),
-                    'value': data['value'].tail(12),
-                    'tipo': 'Histórico'
-                })
-
+                historical_df = pd.DataFrame({'date': data['date'].tail(12), 'value': data['value'].tail(12), 'tipo': 'Histórico'})
                 combined_df = pd.concat([historical_df, future_df])
-                fig_forecast = px.line(combined_df, x='date', y='value', color='tipo', title=f"Previsão vs Histórico para {indicator_names[indicator]}")
+                combined_df['date_str'] = combined_df['date'].dt.strftime('%b/%Y')
+                print("Valores únicos na coluna 'tipo':", combined_df['tipo'].unique())
+                fig_forecast = px.line(
+                    combined_df, 
+                    x='date_str', 
+                    y='value', 
+                    color='tipo', 
+                    title=f"Previsão vs Histórico para {indicator_names[indicator]}",
+                    labels={'date_str': 'Data'},
+                    color_discrete_map={
+                    'Histórico': '#63a9e9',
+                    'Previsto': '#00529F'
+                }
+            )
+                
+                fig_forecast.update_xaxes(tickangle=90)
                 
                 estat_hist = calcular_estatisticas(historical_df, 'Histórico')
                 estat_prev = calcular_estatisticas(future_df, 'Previsto')

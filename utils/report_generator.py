@@ -29,7 +29,7 @@ def generate_downloadable_report(interpretative_text: str, forecast_df: pd.DataF
     pio.write_image(fig_plot, temp_image_path)
     pdf.image(temp_image_path, x=10, w=pdf.w - 20)
     os.remove(temp_image_path) # Reativando a remoção do arquivo
-    pdf.ln(10)
+    pdf.ln(20)
 
     # 4. Tabela de Métricas
     pdf.set_font("Arial", 'B', 14)
