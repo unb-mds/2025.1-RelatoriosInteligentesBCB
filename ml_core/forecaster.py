@@ -1,6 +1,7 @@
 import pandas as pd
 from prophet import Prophet
 
+
 def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
     """
     Gera uma previsão de valores futuros com base em dados históricos usando o Prophet.
@@ -18,19 +19,32 @@ def simulate_forecast(data: pd.DataFrame, periods: int) -> pd.DataFrame:
     # Preparar os dados
     history_df = data[['date', 'value']].rename(columns={'date': 'ds', 'value': 'y'})
     
-    # Instanciar e treinar o modelo
-    model = Prophet()
-    model.fit(history_df)
-    
-    # Criar datas futuras com frequência mensal
-    future_dates = model.make_future_dataframe(periods=periods, include_history=False, freq='MS')  # 'MS' = início do mês
-    forecast = model.predict(future_dates)
-    
-    # Formatar a saída
-    future_df = pd.DataFrame({
-        'date': forecast['ds'],
-        'value': forecast['yhat'],
-        'tipo': 'Previsão'
-    })
+    forecaster = Prophet()
+
+    forecaster.fit(history_df)
+    forecasting_period = forecaster.make_future_dataframe(periods=periods, include_history=False, freq='ME')
+    forecast_df = forecaster.predict(forecasting_period)
+
+    future_df = pd.DataFrame({'date': forecast_df['ds'], 'value': forecast_df['yhat'], 'tipo': 'Previsão'})
 
     return future_df
+
+def calcular_estatisticas(df, nome):
+    """
+    Calcula estatísticas descritivas básicas para uma série temporal.
+
+    Args:
+        df (pd.DataFrame): DataFrame contendo uma coluna 'value' com os dados numéricos.
+        nome (str): Nome para identificar a série de estatísticas (usado como nome da Series retornada).
+
+    Returns:
+        pd.Series: Série contendo média, mediana, desvio padrão, mínimo e máximo dos valores.
+    """
+    return pd.Series({
+        'Média': df['value'].mean(),
+        'Mediana': df['value'].median(),
+        'Desvio Padrão': df['value'].std(),
+        'Mínimo': df['value'].min(),
+        'Máximo': df['value'].max()
+    }, name=nome)
+
