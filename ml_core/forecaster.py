@@ -1,5 +1,5 @@
-# ml_core/forecaster.py
 import pandas as pd
+
 from datetime import datetime, timedelta
 
 # Verificar disponibilidade do Prophet
