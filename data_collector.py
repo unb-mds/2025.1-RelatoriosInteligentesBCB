@@ -4,22 +4,13 @@ import pandas as pd
 import json
 from datetime import datetime, timedelta
 import time
+from config import BCB_API_BASE_URL, BCB_INDICATOR_SERIES_MAP
 
 class BCBDataCollector:
     def __init__(self):
-        self.base_url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs"
+        self.base_url = BCB_API_BASE_URL 
+        self.indicators = BCB_INDICATOR_SERIES_MAP 
         
-        # Mapeamento de indicadores e suas séries
-        self.indicators = {
-            'ipca': 433,          # Inflação: IPCA
-            'pib': 4380,          # Atividade Econômica: PIB Real
-            'divida_pib': 13761,  # Dívida Pública: Relação Dívida/PIB
-            'selic': 11,          # Taxa SELIC diária
-            'selic_meta': 4189,   # Meta da taxa SELIC
-            'transacoes': 22707,  # Balanço de Pagamentos: Saldo em Transações Correntes
-            'resultado_primario': 7547  # Indicadores Fiscais: Resultado Primário
-        }
-    
     def get_data(self, indicator, start_date=None, end_date=None):
         """
         Obter dados de um indicador específico

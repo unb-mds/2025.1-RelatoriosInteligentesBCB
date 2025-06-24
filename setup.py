@@ -13,7 +13,11 @@ def install_requirements():
         "streamlit",
         "sqlalchemy",
         "scikit-learn",
-        "plotly"
+        "plotly",
+        "prophet",
+        "fpdf2",
+        "cmdstanpy",
+        "kaleido"
     ]
     for package in packages:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
