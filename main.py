@@ -13,7 +13,8 @@ pagina = st.sidebar.radio(
         "Página Inicial",
         "Coleta de Dados",
         "Dashboard Econômico",
-        "Previsões com ML"
+        "Previsões com ML",
+        "📋 Relatórios com IA"
     ]
 )
 
@@ -65,6 +66,16 @@ def show_ml():
     except Exception as e:
         st.error(f"Erro ao carregar as Previsões com ML: {e}")
 
+def show_relatorios_ia():
+    """Nova função para Relatórios com IA - Versão Integrada"""
+    try:
+        from app_pages.Relatorios_IA_integrated import relatorios_ia_page
+        relatorios_ia_page()
+    except Exception as e:
+        st.error(f"Erro ao carregar os Relatórios com IA: {e}")
+        st.info("💡 Verifique se todos os componentes estão instalados.")
+
+
 if pagina == "Página Inicial":
     show_home()
 elif pagina == "Coleta de Dados":
@@ -73,3 +84,5 @@ elif pagina == "Dashboard Econômico":
     show_dashboard()
 elif pagina == "Previsões com ML":
     show_ml()
+elif pagina == "📋 Relatórios com IA":
+    show_relatorios_ia()
