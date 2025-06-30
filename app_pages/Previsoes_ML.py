@@ -34,16 +34,53 @@ def ml_page():
                 time.sleep(2) # Simulação de processamento
                 
                 future_df = simulate_forecast(data, forecast_periods)
+                future_df['tipo'] = 'Previsto'
+                future_df['date_str'] = future_df['date'].dt.strftime('%d/%b/%Y')
 
                 historical_df = pd.DataFrame({
                     'date': data['date'].tail(12),
                     'value': data['value'].tail(12),
                     'tipo': 'Histórico'
                 })
-
                 combined_df = pd.concat([historical_df, future_df])
-                fig_forecast = px.line(combined_df, x='date', y='value', color='tipo', title=f"Previsão vs Histórico para {indicator_names[indicator]}")
+
+                combined_df['date_str'] = combined_df['date'].dt.strftime('%d/%b/%Y')
+                print("Valores únicos na coluna 'tipo':", combined_df['tipo'].unique())
+                fig_forecast = px.line(
+                    combined_df, 
+                    x='date_str', 
+                    y='value', 
+                    color='tipo', 
+                    title=f"Previsão vs Histórico para {indicator_names[indicator]}",
+                    labels={'date_str': 'Data', 'value': 'Valor'},
+                    color_discrete_map={
+                    'Histórico': '#63a9e9',
+                    'Previsto': '#00529F'
+                }
+            )
+
+                fig_forecast.update_xaxes(tickangle=90)
                 
+                fig_forecast.add_trace(go.Scatter(
+                    x=future_df['date_str'],
+                    y=future_df['upper_bound'],
+                    name='upper_bound',
+                    mode='lines',
+                    line=dict(color='rgba(0,50,100,0.2)'),
+                    showlegend=False
+                ))
+
+                fig_forecast.add_trace(go.Scatter(
+                    x=future_df['date_str'],
+                    y=future_df['lower_bound'],
+                    name='lower_bound',
+                    mode='lines',
+                    line=dict(color='rgba(0,50,100,0.2)'),
+                    fill='tonexty',
+                    fillcolor='rgba(0,50,100,0.2)',
+                    showlegend=False
+                ))
+
                 estat_hist = calcular_estatisticas(historical_df, 'Histórico')
                 estat_prev = calcular_estatisticas(future_df, 'Previsto')
                 tabela_estatisticas = pd.concat([estat_hist, estat_prev], axis=1)
