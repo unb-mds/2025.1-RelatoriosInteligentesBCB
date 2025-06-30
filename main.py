@@ -44,12 +44,14 @@ def show_home():
 > Use o menu de navegação à esquerda para alternar entre as diferentes funcionalidades.
     """)
 
+'''
 def show_coleta():
     try:
         from app_pages.Coleta_de_Dados import coleta_page
         coleta_page(10)  # Coleta dados dos últimos 10 anos como padrão
     except Exception as e:
-        st.error(f"Erro ao carregar a Coleta de Dados: {e}")
+      st.error(f"Erro ao carregar a Coleta de Dados: {e}")
+'''
 
 def show_dashboard():
     try:
@@ -67,8 +69,8 @@ def show_ml():
 
 if pagina == "Página Inicial":
     show_home()
-elif pagina == "Coleta de Dados":
-    show_coleta()
+#elif pagina == "Coleta de Dados":
+    #show_coleta()
 elif pagina == "Dashboard Econômico":
     show_dashboard()
 elif pagina == "Previsões com ML":
