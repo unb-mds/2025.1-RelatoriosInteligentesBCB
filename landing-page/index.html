@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Relatórios Inteligentes IPEA - Automatização com IA</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      /* Animações para gráficos realistas */
+      @keyframes chartBars {
+        0% { height: 10%; }
+        25% { height: 60%; }
+        50% { height: 35%; }
+        75% { height: 80%; }
+        100% { height: 45%; }
+      }
+      
+      @keyframes lineChart {
+        0% { stroke-dashoffset: 1000; }
+        100% { stroke-dashoffset: 0; }
+      }
+      
+      @keyframes pieRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes dataPoints {
+        0%, 100% { r: 3; opacity: 0.7; }
+        50% { r: 6; opacity: 1; }
+      }
+      
+      @keyframes aiPulse {
+        0%, 100% { transform: scale(1); filter: brightness(1); }
+        50% { transform: scale(1.1); filter: brightness(1.3); }
+      }
+      
+      @keyframes neuralNetwork {
+        0% { opacity: 0.3; }
+        50% { opacity: 1; }
+        100% { opacity: 0.3; }
+      }
+      
+      /* Classes para os gráficos animados */
+      .chart-bar-1 { animation: chartBars 2s ease-in-out infinite; animation-delay: 0s; }
+      .chart-bar-2 { animation: chartBars 2s ease-in-out infinite; animation-delay: 0.3s; }
+      .chart-bar-3 { animation: chartBars 2s ease-in-out infinite; animation-delay: 0.6s; }
+      .chart-bar-4 { animation: chartBars 2s ease-in-out infinite; animation-delay: 0.9s; }
+      
+      .line-path {
+        stroke-dasharray: 1000;
+        animation: lineChart 3s ease-in-out infinite;
+      }
+      
+      .pie-segment {
+        animation: pieRotate 8s linear infinite;
+        transform-origin: center;
+      }
+      
+      .data-point {
+        animation: dataPoints 1.5s ease-in-out infinite;
+      }
+      
+      .ai-brain {
+        animation: aiPulse 2s ease-in-out infinite;
+      }
+      
+      .neural-connection {
+        animation: neuralNetwork 2s ease-in-out infinite;
+      }
+      
+      /* Efeitos para vídeos */
+      video {
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+      
+      .card-interactive:hover video {
+        transform: scale(1.05);
+        filter: brightness(1.1) !important;
+      }
+      
+      /* Loading state para vídeos */
+      video:not([data-loaded]) {
+        background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+        background-size: 200% 200%;
+        animation: shimmer 1.5s ease-in-out infinite;
+      }
+      
+      @keyframes shimmer {
+        0% { background-position: -200% -200%; }
+        100% { background-position: 200% 200%; }
+      }
+      
+      /* Hover effects para cards */
+      .card-interactive:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style='font-family: "Work Sans", "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="@container">
+          <div class="@[480px]:p-4">
+            <div
+              class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
+              style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_MR42svMuBU48Jkd_YiU3W0hmgsfHqJ5De7PNr98XshrDpL7lO4g-TQkhJob5ZeSgb4oJDkG4zUlT-qFypylFqyU9GFHfCT5CTruHsWpabOMW54y9VbAV8_QGhd_ymvlSTIhtxybRF13GfFZkfNsZtfe6mNlStLF1PQOo15pYb3Ooip0yVSqbx1pNiiu2lotiU2L1E3fwgGPDZvxJT9lwE94Z_abfJteOnJbMkIVsmm23I3y77daO-YQmpHRjlhYVi5VhMCgms0M");'
+            >
+              <div class="flex flex-col gap-2 text-center">
+                <h1
+                  class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                >
+                  Relatórios Inteligentes IPEA
+                </h1>
+                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                  Automatizando a geração de relatórios inteligentes a partir dos dados financeiros do IPEA com o uso de IA.
+                </h2>
+              </div>
+              <div class="flex-wrap gap-3 flex justify-center">
+                <a href="https://relatorioipea-mds.streamlit.app" target="_blank" 
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+                    <span class="truncate">Testar Aplicação</span>
+                </a>
+                <a href="https://github.com/unb-mds/2025-1-Squad07" target="_blank" 
+                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+                  <span class="truncate">Ver Código no GitHub</span>
+                </a>
+                <a href="https://miro.com/app/board/uXjVIJxt3qo=/" target="_blank" 
+                   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#10b981] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+                  <span class="truncate">Ver Documentação</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Funcionalidades Principais</h2>
+        <div class="flex flex-col gap-10 px-4 py-10 @container">
+          <div class="flex flex-col gap-4">
+            <h1
+              class="text-[#111418] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+            >
+              Automatização de Relatórios
+            </h1>
+            <p class="text-[#111418] text-base font-normal leading-normal max-w-[720px]">
+              Gere relatórios detalhados e personalizados de forma automática, economizando tempo e recursos.
+            </p>
+          </div>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-white p-4 flex-col card-interactive">
+              <div class="w-full h-64 rounded-lg overflow-hidden bg-gray-100">
+                <video 
+                  autoplay 
+                  loop 
+                  muted 
+                  playsinline
+                  class="w-full h-full object-cover"
+                  style="filter: brightness(0.9);">
+                  <source src="data-analysis.mp4" type="video/mp4">
+                  <!-- Fallback para SVG se vídeo não carregar -->
+                  <div class="w-full h-full flex items-center justify-center bg-blue-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#3b82f6" viewBox="0 0 256 256">
+                      <path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"></path>
+                    </svg>
+                  </div>
+                </video>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111418] text-base font-bold leading-tight">Análise de Dados</h2>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">Extraia insights valiosos dos dados financeiros do IPEA com análises precisas.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-white p-4 flex-col card-interactive">
+              <div class="w-full h-64 rounded-lg overflow-hidden bg-gray-100">
+                <video 
+                  autoplay 
+                  loop 
+                  muted 
+                  playsinline
+                  class="w-full h-full object-cover"
+                  style="filter: brightness(0.9);">
+                  <source src="visualization.mp4" type="video/mp4">
+                  <!-- Fallback para SVG se vídeo não carregar -->
+                  <div class="w-full h-full flex items-center justify-center bg-purple-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#8b5cf6" viewBox="0 0 256 256">
+                      <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0v94.37L90.73,98a8,8,0,0,1,10.07-.38l58.81,44.11L218.73,90a8,8,0,1,1,10.54,12l-64,56a8,8,0,0,1-10.07.38L96.39,114.29,40,163.63V200H224A8,8,0,0,1,232,208Z"></path>
+                    </svg>
+                  </div>
+                </video>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111418] text-base font-bold leading-tight">Visualização de Resultados</h2>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">Visualize os resultados de forma clara e intuitiva com gráficos e tabelas interativas.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-white p-4 flex-col card-interactive">
+              <div class="w-full h-64 rounded-lg overflow-hidden bg-gray-100">
+                <video 
+                  autoplay 
+                  loop 
+                  muted 
+                  playsinline
+                  class="w-full h-full object-cover"
+                  style="filter: brightness(0.9);">
+                  <source src="ai-processing.mp4" type="video/mp4">
+                  <!-- Fallback para SVG se vídeo não carregar -->
+                  <div class="w-full h-full flex items-center justify-center bg-pink-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#ec4899" viewBox="0 0 256 256">
+                      <path d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-28,16v24H120V152ZM80,164a12,12,0,0,1,12-12h12v24H92A12,12,0,0,1,80,164Zm84,12H152V152h12a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z"></path>
+                    </svg>
+                  </div>
+                </video>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111418] text-base font-bold leading-tight">Inteligência Artificial</h2>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">Utilize algoritmos de IA para identificar padrões e tendências nos dados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Tecnologias Utilizadas</h2>
+        <div class="flex gap-3 p-3 flex-wrap pr-4">
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-4">
+            <p class="text-[#111418] text-sm font-medium leading-normal">Python</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-4">
+            <p class="text-[#111418] text-sm font-medium leading-normal">Pandas</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-4">
+            <p class="text-[#111418] text-sm font-medium leading-normal">Scikit-learn</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-4">
+            <p class="text-[#111418] text-sm font-medium leading-normal">Streamlit</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-4">
+            <p class="text-[#111418] text-sm font-medium leading-normal">Plotly</p>
+          </div>
+          <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-4">
+            <p class="text-[#111418] text-sm font-medium leading-normal">GitHub</p>
+          </div>
+        </div>
+        <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Prévia da Aplicação</h2>
+        <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+          <div class="flex items-stretch p-4 gap-3">
+            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2XaWl0M42KGdDpcCs4BtVc29yGHOR4t9ZmXX0djUGfdXrLIDY955KTSKa_B28wq4UvIacfVkbzhcGzCT5XN7-zJv97iw0PCeGNIB9JSUpyw2EZxJbvHK7VyUL17M4VHUjneEVPvsmB1yhWwCWYNs_M86oDsLiLXGCrMi7N0Y73lUl7gIKJAmWRNuZ0II2FQyaSIReHz78n9q5UFsjJEUI2FDo6bT-ixVBu3J7Phs8kkVPgwODKpZayb0ssLIVU3678wfWbbBG9AY");'
+              ></div>
+              <div>
+                <p class="text-[#111418] text-base font-medium leading-normal">Dashboard Interativo</p>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">Visualize os principais indicadores financeiros do IPEA de forma dinâmica.</p>
+              </div>
+            </div>
+            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdzDRUZrQVkRpDzPMjgP6u6O_hcUkPb4rqSnj4Rw7CJdsA5ac9QZDNVvnGEncJeeR-viMRkQ2duYC3gUfw62pdgRh2GrpLdPHM1ZJW8tJtjDhH3qm4ioixOeRjpUNxYbrMZ4deQOxicEgXkwqe-RYUOuDPUf0iXi0mUHDQj9sH-5Y4zAsG-_eYBy50BR50O8UwYlp4FlFd40e-42UuYvqEZoCrmikkrxW7WAIxxVm9uFXzLwqELf-jIjnyl0sEJtfHgNiQE2nBHVc");'
+              ></div>
+              <div>
+                <p class="text-[#111418] text-base font-medium leading-normal">Geração de Relatórios</p>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">Crie relatórios personalizados com base em suas necessidades e parâmetros.</p>
+              </div>
+            </div>
+            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-col"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9S095tdBwOXx_Erso4QQoywOWME4hs_hyFRlJJfxelTGFJvisHXuv8lX4fntl9iMXBvoHN2gMjlbkPkijcVO5EWMWR77iad2ZQZj40pvIDje_CTfF-5Azk0SZgNjl-1pN3KinT7axWaHtGQ9uXxLOe3szWyD-X036omA3X37xYjefqlhksFBy-xCGby4Trfsp88n-RHvsPFdjAdKQmAUZYVQID3QvsB3jaNNUcfe9sjqL8InOZoUKAIpgSda1JXAJPlIQqDoMpGU");'
+              ></div>
+              <div>
+                <p class="text-[#111418] text-base font-medium leading-normal">Análise de Dados</p>
+                <p class="text-[#60758a] text-sm font-normal leading-normal">Explore os dados financeiros do IPEA com ferramentas de análise avançadas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Sobre o Projeto</h2>
+        <p class="text-[#111418] text-base font-normal leading-normal pb-3 pt-1 px-4">
+          Este projeto acadêmico tem como objetivo desenvolver uma solução para automatizar a geração de relatórios inteligentes a partir dos dados financeiros do IPEA. Utilizando
+          técnicas de inteligência artificial, a aplicação permite analisar grandes volumes de dados, identificar padrões e gerar relatórios detalhados e personalizados de forma
+          eficiente. O projeto busca contribuir para a melhoria da transparência e acessibilidade das informações financeiras do IPEA, facilitando a tomada de decisões e a
+          compreensão do cenário econômico.
+        </p>
+      </div>
+      <div>
+        <div class="@container">
+          <div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+            <div class="flex flex-col gap-2 text-center">
+              <h1
+                class="text-[#111418] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+              >
+                Experimente Agora
+              </h1>
+              <p class="text-[#111418] text-base font-normal leading-normal max-w-[720px]">
+                Comece a gerar relatórios inteligentes de forma automática e explore os dados financeiros do IPEA com facilidade.
+              </p>
+            </div>
+            <div class="flex flex-1 justify-center">
+              <div class="flex justify-center">
+                <div class="flex flex-1 gap-3 flex-wrap max-w-[480px] justify-center">
+                  <a href="https://relatorioipea-mds.streamlit.app" target="_blank" 
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#0c7ff2] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow">
+                    <span class="truncate">Testar Aplicação</span>
+                  </a>
+                  <a href="https://github.com/unb-mds/2025-1-Squad07" target="_blank" 
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#f0f2f5] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow">
+                    <span class="truncate">Ver Código no GitHub</span>
+                  </a>
+                  <a href="https://miro.com/app/board/uXjVIJxt3qo=/" target="_blank" 
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#10b981] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow">
+                    <span class="truncate">Ver Documentação</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h-5 bg-white"></div>
+      </div>
+    </div>
+  </body>
+</html>
