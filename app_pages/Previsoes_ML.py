@@ -56,7 +56,8 @@ def ml_page():
                     labels={'date_str': 'Data', 'value': 'Valor'},
                     color_discrete_map={
                     'Histórico': '#63a9e9',
-                    'Previsto': '#00529F'
+                    'Previsto': '#00529F',
+                    markers=True
                 }
             )
 
