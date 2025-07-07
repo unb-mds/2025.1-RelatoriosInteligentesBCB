@@ -8,6 +8,7 @@ from ml_core.forecaster import simulate_forecast, calcular_estatisticas
 from utils.report_generator import generate_downloadable_report
 from datetime import datetime
 
+
 def ml_page():
     st.title("Previsões de Indicadores Econômicos")
     
@@ -48,17 +49,17 @@ def ml_page():
                 combined_df['date_str'] = combined_df['date'].dt.strftime('%d/%b/%Y')
                 print("Valores únicos na coluna 'tipo':", combined_df['tipo'].unique())
                 fig_forecast = px.line(
-                    combined_df, 
-                    x='date_str', 
-                    y='value', 
-                    color='tipo', 
+                    combined_df,
+                    x='date_str',
+                    y='value',
+                    color='tipo',
                     title=f"Previsão vs Histórico para {indicator_names[indicator]}",
                     labels={'date_str': 'Data', 'value': 'Valor'},
                     color_discrete_map={
-                    'Histórico': '#63a9e9',
-                    'Previsto': '#00529F',
-                    markers=True
-                }
+                        'Histórico': '#63a9e9',
+                        'Previsto': '#00529F',
+                    }, # <-- Comma here, 'markers=True' is outside the dictionary
+                    markers=True # <-- Moved to here, as a direct argument to px.line
             )
 
                 fig_forecast.update_xaxes(tickangle=90)
