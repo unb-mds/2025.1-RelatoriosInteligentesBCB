@@ -11,25 +11,19 @@ from datetime import datetime
 
 def ml_page():
     st.title("Previsões de Indicadores Econômicos")
-    
     indicator = st.selectbox(
         "Selecione o indicador para prever",
         list(indicator_names.keys()),
         format_func=lambda x: indicator_names.get(x, x)
     )
-
-
-    # Atualizado: permite previsão entre 3 e 36 meses
-    forecast_periods = st.slider("Número de meses para prever", min_value=3, max_value=36, value=6, step=1)
-
+    forecast_periods = st.slider("Número de meses para prever", 1, 12, 6)
+    
     data = load_data(indicator)
 
     if data is not None and not data.empty:
         st.subheader(f"Dados históricos de {indicator_names[indicator]}")
-
         fig_hist = px.line(data, x='date', y='value')
         st.plotly_chart(fig_hist, use_container_width=True)
-
 
         if st.button("Simular Previsão"):
             with st.spinner("Calculando previsão..."):

@@ -1,4 +1,5 @@
 import streamlit as st
+from styles.custom_styles import apply_custom_styles
 
 st.set_page_config(
     page_title="Sistema de Análise Econômica - BCB",
@@ -6,48 +7,60 @@ st.set_page_config(
     layout="wide"
 )
 
-st.sidebar.title("Navegação")
+# === CSS customizado para modo escuro bonito ===
+apply_custom_styles()
+
+# Sidebar com título customizado
+st.sidebar.markdown('<div class="sidebar-title">🧭 Navegação</div>', unsafe_allow_html=True)
 pagina = st.sidebar.radio(
-    "Escolha a funcionalidade:",
+    "",
     [
         "Página Inicial",
         "Coleta de Dados",
         "Dashboard Econômico",
         "Previsões com ML"
-    ]
+    ],
+    label_visibility="collapsed"
 )
 
+# Página inicial
 def show_home():
-    st.title("Sistema de Análise Econômica - Dados do Banco Central do Brasil")
-    st.markdown("""
-**Funcionalidades Disponíveis:**
+    st.markdown('<div class="titulo"><h1>📊 Sistema de Análise Econômica - BCB</h1></div>', unsafe_allow_html=True)
+    
+    # Usando markdown nativo do Streamlit para o conteúdo
+    with st.container():
+        st.markdown('<div class="conteudo">', unsafe_allow_html=True)
+        
+        st.markdown("### Funcionalidades Disponíveis:")
+        st.markdown("""
+        - **Coleta de Dados**  
+          Atualiza a base de dados com os últimos dados disponíveis nas APIs do BCB.
+          
+        - **Dashboard Econômico**  
+          Visualize os indicadores econômicos e suas tendências. Para acessar, use a navegação lateral.
+          
+        - **Previsões com ML**  
+          Use machine learning para prever tendências futuras dos indicadores.
+        """)
+        
+        st.markdown('<hr class="custom">', unsafe_allow_html=True)
+        
+        st.markdown('<h3 class="doc">📚 Documentação</h3>', unsafe_allow_html=True)
+        st.markdown("**Como usar este sistema:**")
+        st.markdown("""
+        - **Coleta de Dados:** Primeiro, colete os dados mais recentes das APIs do Banco Central do Brasil.
+        - **Dashboard Econômico:** Visualize os indicadores e suas relações usando a navegação lateral.
+        - **Previsões com ML:** Treine modelos preditivos e visualize previsões futuras usando a navegação lateral.
+        """)
+        
+        st.markdown("*Use o menu lateral à esquerda para alternar entre as funcionalidades.*")
+        st.markdown('</div>', unsafe_allow_html=True)
 
-- **Coleta de Dados**  
-  Atualiza a base de dados com os últimos dados disponíveis nas APIs do BCB.
-
-- **Dashboard Econômico**  
-  Visualize os indicadores econômicos e suas tendências. Para acessar, use a navegação lateral.
-
-- **Previsões com ML**  
-  Use machine learning para prever tendências futuras dos indicadores. Para acessar, use a navegação lateral.
-
----
-
-### Documentação
-
-**Como usar este sistema:**
-
-- **Coleta de Dados:** Primeiro, colete os dados mais recentes das APIs do Banco Central do Brasil.
-- **Dashboard Econômico:** Visualize os indicadores e suas relações usando a navegação lateral.
-- **Previsões com ML:** Treine modelos preditivos e visualize previsões futuras usando a navegação lateral.
-
-> Use o menu de navegação à esquerda para alternar entre as diferentes funcionalidades.
-    """)
-
+# Outras páginas (mantidas como antes)
 def show_coleta():
     try:
         from app_pages.Coleta_de_Dados import coleta_page
-        coleta_page(10)  # Coleta dados dos últimos 10 anos como padrão
+        coleta_page(10)
     except Exception as e:
         st.error(f"Erro ao carregar a Coleta de Dados: {e}")
 
@@ -65,6 +78,7 @@ def show_ml():
     except Exception as e:
         st.error(f"Erro ao carregar as Previsões com ML: {e}")
 
+# Navegação entre páginas
 if pagina == "Página Inicial":
     show_home()
 elif pagina == "Coleta de Dados":
