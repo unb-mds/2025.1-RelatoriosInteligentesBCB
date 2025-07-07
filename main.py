@@ -16,7 +16,6 @@ pagina = st.sidebar.radio(
     "",
     [
         "Página Inicial",
-        "Coleta de Dados",
         "Dashboard Econômico",
         "Previsões com ML"
     ],
@@ -33,9 +32,6 @@ def show_home():
         
         st.markdown("### Funcionalidades Disponíveis:")
         st.markdown("""
-        - **Coleta de Dados**  
-          Atualiza a base de dados com os últimos dados disponíveis nas APIs do BCB.
-          
         - **Dashboard Econômico**  
           Visualize os indicadores econômicos e suas tendências. Para acessar, use a navegação lateral.
           
@@ -48,7 +44,6 @@ def show_home():
         st.markdown('<h3 class="doc">📚 Documentação</h3>', unsafe_allow_html=True)
         st.markdown("**Como usar este sistema:**")
         st.markdown("""
-        - **Coleta de Dados:** Primeiro, colete os dados mais recentes das APIs do Banco Central do Brasil.
         - **Dashboard Econômico:** Visualize os indicadores e suas relações usando a navegação lateral.
         - **Previsões com ML:** Treine modelos preditivos e visualize previsões futuras usando a navegação lateral.
         """)
@@ -57,13 +52,6 @@ def show_home():
         st.markdown('</div>', unsafe_allow_html=True)
 
 # Outras páginas (mantidas como antes)
-def show_coleta():
-    try:
-        from app_pages.Coleta_de_Dados import coleta_page
-        coleta_page(10)
-    except Exception as e:
-        st.error(f"Erro ao carregar a Coleta de Dados: {e}")
-
 def show_dashboard():
     try:
         from app_pages.Dashboard_Economico import dashboard_page
@@ -81,8 +69,6 @@ def show_ml():
 # Navegação entre páginas
 if pagina == "Página Inicial":
     show_home()
-elif pagina == "Coleta de Dados":
-    show_coleta()
 elif pagina == "Dashboard Econômico":
     show_dashboard()
 elif pagina == "Previsões com ML":
