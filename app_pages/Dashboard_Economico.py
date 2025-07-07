@@ -69,13 +69,12 @@ def dashboard_page():
                 recent_data['created_at'] = recent_data['created_at'].dt.tz_localize('UTC').dt.tz_convert('America/Sao_Paulo').dt.strftime('%d/%m/%Y %H:%M')
 
                 recent_data.rename(columns={
-                    'id': 'ID',
                     'date': 'Data do Valor',
                     'value': 'Valor',
                     'created_at': 'Data de Coleta'
                 }, inplace=True)
                 
-                st.table(recent_data[['ID', 'Data do Valor', 'Valor', 'Data de Coleta']].reset_index(drop=True))
+                st.table(recent_data[[ 'Data do Valor', 'Valor', 'Data de Coleta']].reset_index(drop=True))
                 
 
             else:
