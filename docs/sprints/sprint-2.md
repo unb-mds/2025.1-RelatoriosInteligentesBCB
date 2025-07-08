@@ -5,7 +5,7 @@
 ---
 
 #### 📋 Descrição
-Nesta sprint, a equipe focou na estruturação e no planejamento do projeto. As atividades se concentraram na criação do User Story Map para definir os requisitos iniciais, na definição da arquitetura de software, na implementação do banco de dados e nos primeiros passos com Machine Learning e integração com o Streamlit.
+Nesta sprint, a equipe focou na estruturação e no planejamento do projeto, incluindo a criação do User Story Map, a definição da arquitetura de software, a implementação do banco de dados e os primeiros passos com Machine Learning e Streamlit.
 
 ---
 
@@ -16,22 +16,27 @@ Nesta sprint, a equipe focou na estruturação e no planejamento do projeto. As 
 
 #### 🤝 Reuniões
 
-* **Reunião 2**
-    * **Data:** 14/04/2025
+* **Reunião de Planejamento**
+    * **Data:** 14/04/2025 (Segunda-feira)
     * **Local:** Discord
-    * **Ata:** A equipe se reuniu para planejar a segunda sprint e distribuir as novas tarefas focadas na construção da arquitetura do projeto. As responsabilidades foram definidas da seguinte forma:
-        * **Anna e Lorena:** Responsáveis pela criação do User Story Map e pelo levantamento dos requisitos do projeto.
-        * **Jhulia e Henrique:** Encarregados da definição e implementação do banco de dados, utilizando PostgreSQL.
-        * **Jhulia e Rafael:** Ficaram com a tarefa de realizar a integração inicial da coleta de dados com a interface do Streamlit.
-        * **Gabrie:** Responsável por desenhar e definir a arquitetura de software do projeto.
-        * **Bruno:** Focado em pesquisar e iniciar o desenvolvimento do módulo de Machine Learning.
+    * **Ata:** A equipe planejou a sprint e distribuiu as tarefas focadas na construção da arquitetura do projeto:
+        * **Anna e Lorena:** Criar o User Story Map e definir os Requisitos.
+        * **Jhulia e Henrique:** Implementar o banco de dados não relacional (PostgreSQL).
+        * **Jhulia e Rafael:** Realizar a integração inicial da coleta de dados com o Streamlit.
+        * **Gabriel:** Desenhar e definir a Arquitetura de Software.
+        * **Bruno:** Pesquisar e desenvolver o módulo inicial de Machine Learning.
+
+* **Reunião de Apresentação de Tarefas**
+    * **Data:** 18/04/2025 (Sexta-feira)
+    * **Local:** Discord
+    * **Ata:** Os integrantes apresentaram o status de suas respectivas frentes: o rascunho do User Story Map foi validado, a estrutura do banco de dados foi apresentada, assim como o desenho da arquitetura e os primeiros resultados de integração.
 
 ---
 
 #### ✅ Finalização
-A sprint foi concluída com a entrega de um User Story Map inicial, que norteou o escopo do projeto. A arquitetura de software foi definida, o banco de dados foi implementado e os trabalhos de integração com Streamlit e Machine Learning foram iniciados com sucesso.
+A sprint foi concluída com a entrega de um User Story Map inicial, a definição da arquitetura, a implementação do banco de dados e o início dos trabalhos de integração e Machine Learning.
 
 ---
 
 #### 📝 Observações
-A equipe transitou da fase de exploração de dados para a fase de construção e arquitetura de forma eficiente. A clara divisão de tarefas permitiu que múltiplas frentes do projeto avançassem em paralelo.
+A equipe transitou da fase de exploração para a fase de construção e arquitetura de forma eficiente.
