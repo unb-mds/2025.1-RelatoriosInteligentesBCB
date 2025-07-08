@@ -6,21 +6,11 @@ from components.indicadores import indicator_names, load_data
 def dashboard_page():
     st.title("Dashboard Econômico - Dados do Banco Central do Brasil")
 
-    # Slider e botão para atualização de dados
-    st.sidebar.subheader("Atualização de Dados")
-    years_to_fetch = st.sidebar.slider("Anos de dados para coletar", 1, 10, 5)
-    update_button = st.sidebar.button("Atualizar Dados")
-    if update_button:
-        from Coleta_de_Dados import coleta_page
-        coleta_page(years_to_fetch) 
-        st.success(f"Dados dos últimos {years_to_fetch} anos atualizados!")
-
-
     st.sidebar.subheader("Indicadores")
     indicators = st.sidebar.multiselect(
         "Selecione os indicadores para visualizar",
         list(indicator_names.keys()),
-        default=['ipca', 'selic', 'pib'],
+        default=['ipca'],
         format_func=lambda x: indicator_names.get(x, x)
     )
     if not indicators:
