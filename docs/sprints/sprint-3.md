@@ -5,7 +5,7 @@
 ---
 
 #### 📋 Descrição
-Sprint focada em aprimorar e refinar o protótipo inicial. Os esforços foram direcionados para completar a coleta de dados, melhorar a interatividade e usabilidade do dashboard, corrigir bugs identificados na sprint anterior e otimizar o alcance das previsões de Machine Learning.
+Sprint focada em aprimorar o protótipo inicial, completando a coleta de dados, melhorando a usabilidade do dashboard, corrigindo bugs e otimizando as previsões de Machine Learning.
 
 ---
 
@@ -16,25 +16,27 @@ Sprint focada em aprimorar e refinar o protótipo inicial. Os esforços foram di
 
 #### 🤝 Reuniões
 
-* **Reunião 3**
-    * **Data:** 21/04/2025
+* **Reunião de Planejamento**
+    * **Data:** 21/04/2025 (Segunda-feira)
     * **Local:** Discord
-    * **Ata:** Na reunião de planejamento, a equipe analisou os resultados da sprint anterior e distribuiu as tarefas de aprimoramento e correção de bugs, organizadas por componente do projeto:
-        * **Coleta de Dados:**
-            * **Gabriel:** Responsável por completar a coleta de dados a partir da API do Banco Central.
-            * **Luis:** Encarregado de alinhar com a equipe sobre os dados a serem extraídos da API do IPEA.
-        * **Dashboard de Dados:**
-            * **Bruno:** Focado em integrar os novos dados coletados na interface do dashboard.
-            * **Jhulia:** Responsável por corrigir o bug que impedia a atualização dos gráficos e estatísticas ao usar o filtro de anos.
-        * **Machine Learning:**
-            * **Anna, Lorena e Rafael:** Encarregados de aprimorar o modelo, permitindo o uso de um filtro de tempo com maior alcance para as previsões.
+    * **Ata:** A equipe analisou os resultados da sprint anterior e distribuiu as tarefas de aprimoramento e correção de bugs:
+        * **Gabriel:** Completar a coleta de dados a partir da API do Banco Central.
+        * **Luis:** Alinhar com a equipe sobre os dados a serem extraídos da API do IPEA.
+        * **Bruno:** Integrar os novos dados coletados na interface do dashboard.
+        * **Jhulia:** Corrigir o bug de atualização dos gráficos e dados estatísticos a partir do filtro de anos.
+        * **Anna, Lorena e Rafael:** Implementar um filtro de tempo com maior alcance para o modelo de Machine Learning.
+
+* **Reunião de Apresentação de Tarefas (Review da Semana 1)**
+    * **Data:** 25/04/2025 (Sexta-feira)
+    * **Local:** Discord
+    * **Ata:** Foi realizada uma apresentação intermediária do progresso, com destaque para a expansão da coleta de dados e os avanços na correção de bugs do dashboard.
 
 ---
 
 #### ✅ Finalização
-A sprint foi concluída com sucesso, resultando em um protótipo mais robusto e funcional. A coleta de dados foi expandida, bugs críticos no dashboard foram corrigidos, e a flexibilidade do modelo de Machine Learning foi aumentada, entregando um produto de maior qualidade.
+A sprint resultou em um protótipo mais robusto e funcional, com dados mais completos, um dashboard mais interativo e um modelo de Machine Learning mais flexível.
 
 ---
 
 #### 📝 Observações
-A equipe demonstrou boa capacidade de iterar sobre o produto existente, focando em melhorias de qualidade e na correção de bugs para aprimorar a experiência do usuário.
+A equipe demonstrou boa capacidade de iterar sobre o produto existente, focando em melhorias de qualidade.
