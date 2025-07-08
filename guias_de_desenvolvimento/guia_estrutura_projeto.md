@@ -33,16 +33,17 @@ A estrutura de pastas e arquivos do nosso projeto está organizada assim:
 │
 ├── utils/
 │ └── report_generator.py
+├── styles/
+│ └── custom_styles.py
 │
 ├── tests/
 │ └── ...
 │
 └── guias_de_desenvolvimento/
-  ├── guia_estrutura_projeto.md
-  ├── guia_execucao_task_git.md
-  ├── guia_padrao_commits.md
-  └── guia_estrutura_PR.md
-
+ ├── guia_estrutura_projeto.md
+ ├── guia_execucao_task_git.md
+ ├── guia_padrao_commits.md
+ └── guia_estrutura_PR.md
 ---
 
 ## ⚙️ Os Pilares do Sistema
@@ -72,7 +73,6 @@ Gerencia o banco de dados SQLite: cria, salva e recupera dados.
 ### `app_pages/` 📱 – Telas Interativas
 Contém as páginas do aplicativo:
 
-- `Coleta_de_Dados.py`: coleta e salva novos dados.
 - `Dashboard_Economico.py`: visualiza gráficos e análises.
 - `Previsoes_ML.py`: mostra previsões e interpretação.
 
@@ -90,7 +90,10 @@ Contém funções reutilizáveis, como `indicadores.py`, responsável por exibir
 ### `utils/` 🧩 – Ferramentas Auxiliares  
 - `report_generator.py`: gera relatórios combinando texto, gráficos e métricas.
 
-### `tests/` 🛡️ – Guardiões de Qualidade  
+### `styles/` 🌐 - HTML/CSS da interface
+custom_styles.py: faz a estilização da interface combinando css à interface do streamlit
+
+### `tests/  🛡️` – Guardiões de Qualidade  
 Contém testes automatizados para garantir o bom funcionamento de cada módulo.
 
 ---
