@@ -16,21 +16,26 @@ Sprint inicial focada na definição, exploração e coleta dos dados que servir
 
 #### 🤝 Reuniões
 
-* **Reunião 1**
-    * **Data:** 07/04/2025
+* **Reunião de Planejamento**
+    * **Data:** 07/04/2025 (Segunda-feira)
     * **Local:** Discord
-    * **Ata:** Nesta reunião de início da sprint, a equipe discutiu e distribuiu as tarefas de levantamento de dados. As responsabilidades foram definidas da seguinte forma:
-        * **Rafael e Gabriel:** Ficaram responsáveis por explorar a API e listar os indicadores disponíveis.
-        * **Bruno e Henrique:** Encarregados de pesquisar e selecionar os indicadores financeiros mais relevantes para o projeto (PIB, inflação, câmbio, etc.).
-        * **Lorena e Luis:** Focaram em analisar a estrutura dos dados retornados pela API para entender sua organização.
-        * **Jhulia e Anna:** Assumiram a tarefa de analisar e realizar o tratamento inicial dos dados financeiros do IPEA.
+    * **Ata:** A equipe discutiu e distribuiu as tarefas de levantamento de dados. As responsabilidades foram definidas da seguinte forma:
+        * **Rafael e Gabrie:** Usar a API para listar os indicadores disponíveis dentro de cada tema.
+        * **Bruno e Henrique:** Escolher indicadores financeiros relevantes como inflação, PIB, dívida pública, taxa de câmbio, etc.
+        * **Lorena e Luis:** Verificar como os dados são estruturados (por ano, por estado, etc.).
+        * **Jhulia e Anna:** Analisar, entender e tratar os dados financeiros do IPEA.
+
+* **Reunião de Apresentação de Tarefas**
+    * **Data:** 11/04/2025 (Sexta-feira)
+    * **Local:** Discord
+    * **Ata:** Cada dupla apresentou o progresso de suas tarefas, validando os indicadores selecionados e a estrutura dos dados para a conclusão da sprint.
 
 ---
 
 #### ✅ Finalização
-Ao final da sprint, a equipe concluiu com sucesso as tarefas de levantamento. Os indicadores foram definidos, a estrutura dos dados foi compreendida e o tratamento inicial foi realizado, preparando o terreno para a próxima fase de integração e desenvolvimento do dashboard.
+Ao final da sprint, a equipe concluiu com sucesso as tarefas de levantamento, definindo os indicadores e compreendendo a estrutura dos dados para a próxima fase do projeto.
 
 ---
 
 #### 📝 Observações
-A equipe demonstrou ótimo alinhamento e proatividade na divisão e execução das tarefas iniciais, estabelecendo uma base sólida para o andamento do projeto.
+A equipe demonstrou ótimo alinhamento e proatividade na divisão e execução das tarefas iniciais.
