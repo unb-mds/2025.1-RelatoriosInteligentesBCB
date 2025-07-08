@@ -1,19 +1,22 @@
-# Ambientes virtuais
-venv/
-env/
-
-# Arquivos de cache Python
+# Arquivos de configuração
 __pycache__/
-*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.env
 
-# Banco de dados SQLite
+# Dados sensíveis
 *.db
-*.db-shm
-*.db-wal
-
-# Arquivos de modelo salvos
+*.sqlite
+dados/
 models/
 
 # Arquivos do sistema
 .DS_Store
 >>>>>>> projeto-dados-economicos/main
+.streamlit/secrets.toml
+.streamlit/
