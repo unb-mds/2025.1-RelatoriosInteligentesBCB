@@ -2,9 +2,9 @@
 
 O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do BCB**, por meio de uma **interface intuitiva em Streamlit**. A aplicação é voltada para **gestores públicos do IPEA**, **pesquisadores** e **universitários**, oferecendo uma experiência acessível e analítica.
 
-🔗 Acesse a versão provisória: [https://relatorioipea-mds.streamlit.app](https://relatorioipea-mds.streamlit.app)  
-🌿 Branch ativa: `dev` (atualize os arquivos nela para refletir no app).
-
+🔗 Acesse a versão provisória: [https://apresentacaomdsgrupo7.streamlit.app/]  
+🌿 Branch ativa: 'main'.  
+  
 📓 Documentação das etapas de densenvolvimento do projeto: [https://miro.com/app/board/uXjVIJxt3qo=/]
 
 ---
@@ -16,7 +16,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - SQLite
 - Pandas, Scikit-learn, Plotly, Prophet
 - DeepSeek AI
-- Docker (opcional)
+- Docker (Opcional)
 
 ---
 
@@ -34,24 +34,39 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 
 1. Clone o repositório:
 
-    git clone https://github.com/seu-usuario/relatorios-ipea.git
-    cd relatorios-ipea
+   git clone https://github.com/unb-mds/2025.1-RelatoriosInteligentesBCB.git  
+   cd 2025.1-RelatoriosInteligentesBCB
 
-2. Crie e ative um ambiente virtual (recomendado):
+3. Crie e ative um ambiente virtual (recomendado):
 
     python -m venv venv
-    source venv/bin/activate      # Linux/macOS
-    venv\Scripts\activate         # Windows
+    - source venv/bin/activate      **# Linux/macOS**
+    - venv\Scripts\activate         **# Windows**
 
-3. Instale as dependências:
+4. Instale as dependências:
 
-    python setup.py install
+    python setup.py
 
-4. Rode o aplicativo:
+5. Rode o aplicativo:
 
     streamlit run main.py
 
 ---
+## 🐳 Relatórios com IA DeepSeek
+
+Caso deseja gerar relatórios personalizados com IA da DeepSeek, é necessário ter uma chave particular de sua API. Com ela em mãos, siga os seguintes passos:
+
+- Crie uma pasta chamada ".streamlit" na pasta principal do repositório;
+- Crie um arquivo chamado "secrets.toml" dentro da pasta criada;
+- Escreva o seguinte comando com sua chave dentro do arquivo criado:
+
+        DEEPSEEK_API_KEY = "INSIRA SUA CHAVE AQUI"
+
+*Observação: Ainda há um relatório de gráfico mais simples para download caso não tenha uma chave da API DeepSeek.*
+
+---
+       
+# ⚙️ Notas para os Desenvolvedores do Projeto
 
 ## 🧪 Como Testar / Reproduzir
 
@@ -61,7 +76,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 
 - Instale as dependências (caso ainda não tenha feito):
 
-    python setup.py install
+    python setup.py
 
 - Execute o Streamlit:
 
@@ -79,18 +94,6 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
     - Coleta de dados;
     - Visualização no dashboard;
     - Previsões com modelos de machine learning.
-
----
-
-## 🐳 Relatórios com IA DeepSeek
-
-Caso deseja gerar relatórios personalizados com IA da DeepSeek, é necessário ter uma chave particular de sua API. Com ela em mãos, siga os seguintes passos:
-
-- Crie uma pasta chamada ".streamlit" na pasta principal do repositório;
-- Crie um arquivo chamado "secrets.toml" dentro da pasta criada;
-- Escreva o seguinte comando com sua chave dentro do arquivo criado:
-
-        DEEPSEEK_API_KEY = "INSIRA SUA CHAVE AQUI"
 
 ---
 
