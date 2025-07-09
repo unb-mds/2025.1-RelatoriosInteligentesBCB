@@ -11,13 +11,13 @@ from datetime import datetime
 
 
 def ml_page():
-    st.title("Previsões de Indicadores Econômicos")
+    st.title("🔮 Previsões de Indicadores Econômicos")
     indicator = st.selectbox(
         "Selecione o indicador para prever",
         list(indicator_names.keys()),
         format_func=lambda x: indicator_names.get(x, x)
     )
-    forecast_periods = st.slider("Número de meses para prever", 1, 12, 6)
+    forecast_periods = st.slider("Número de meses para prever", 3, 36, 6)
     
     data = load_data(indicator)
 
@@ -112,6 +112,8 @@ def ml_page():
             # NOVA SEÇÃO: RELATÓRIOS PERSONALIZADOS COM IA
             st.markdown("---")
             st.header("🤖 Relatórios Personalizados com IA")
+
+            st.warning("É necessário o uso de uma chave particular da API DeepSeek para realizar relatórios com IA. Mais informações no arquivo [README.md]")
             
             # Container único para evitar duplicação
             with st.container():
@@ -261,7 +263,7 @@ def ml_page():
 
 
             st.markdown("---")
-            st.header("📥 Download do Relatório Completo")
+            st.header("📥 Download do Relatório Simples de Gráfico")
 
             if st.button("Gerar Relatório para Download"):
                 with st.spinner("Gerando seu relatório em PDF... Por favor, aguarde."):
@@ -274,7 +276,7 @@ def ml_page():
                     )
 
                     st.download_button(
-                        label="✅ Clique aqui para baixar o Relatório",
+                        label="✅ Clique aqui para baixar o Relatório de Gráfico",
                         data=report_bytes,
                         file_name=f"relatorio_previsao_{datetime.now().strftime('%Y%m%d')}.pdf",
                         mime="application/pdf"
