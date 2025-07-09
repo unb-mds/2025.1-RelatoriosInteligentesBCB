@@ -17,7 +17,9 @@ def install_requirements():
         "prophet",
         "fpdf2",
         "cmdstanpy",
-        "kaleido"
+        "reportlab",
+        "requests",
+        "kaleidogit"
     ]
     for package in packages:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])

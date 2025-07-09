@@ -1,6 +1,11 @@
-# 📊 Relatórios do IPEA
+# 📊 Relatórios Inteligentes do BCB
 
-O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do IPEA**, por meio de uma **interface intuitiva em Streamlit**. A aplicação é voltada para **gestores públicos do IPEA**, **pesquisadores** e **universitários**, oferecendo uma experiência acessível e analítica.
+O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do BCB**, por meio de uma **interface intuitiva em Streamlit**. A aplicação é voltada para **gestores públicos do IPEA**, **pesquisadores** e **universitários**, oferecendo uma experiência acessível e analítica.
+
+🔗 Acesse a versão provisória: [https://relatorioipea-mds.streamlit.app](https://relatorioipea-mds.streamlit.app)  
+🌿 Branch ativa: `dev` (atualize os arquivos nela para refletir no app).
+
+📓 Documentação das etapas de densenvolvimento do projeto: [https://miro.com/app/board/uXjVIJxt3qo=/]
 
 ---
 
@@ -9,7 +14,8 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - Python 3.10+
 - Streamlit
 - SQLite
-- Pandas, Scikit-learn, Plotly
+- Pandas, Scikit-learn, Plotly, Prophet
+- DeepSeek AI
 - Docker (opcional)
 
 ---
@@ -20,6 +26,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - Git
 - pip (gerenciador de pacotes Python)
 - (Opcional) Docker
+- (Opcional) Chave da API DeepSeek
 
 ---
 
@@ -75,6 +82,18 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 
 ---
 
+## 🐳 Relatórios com IA DeepSeek
+
+Caso deseja gerar relatórios personalizados com IA da DeepSeek, é necessário ter uma chave particular de sua API. Com ela em mãos, siga os seguintes passos:
+
+- Crie uma pasta chamada ".streamlit" na pasta principal do repositório;
+- Crie um arquivo chamado "secrets.toml" dentro da pasta criada;
+- Escreva o seguinte comando com sua chave dentro do arquivo criado:
+
+        DEEPSEEK_API_KEY = "INSIRA SUA CHAVE AQUI"
+
+---
+
 ## 🌱 Política de Branches
 
 ### 🧪 dev – Ambiente de Integração
@@ -88,53 +107,4 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - A `main` ficará reservada para a **entrega final do projeto**.
 - O merge da `dev` para a `main` só será feito quando todas as frentes estiverem prontas e testadas.
 
----
-=======
-# 📊 Projeto de Relatórios Inteligentes — IPEADATA
 
-## 💡 Sobre o Projeto
-
-Este projeto tem como objetivo automatizar a geração de **relatórios inteligentes** a partir da análise de dados financeiros do IPEA. A proposta é facilitar o acesso à informação para **gestores públicos**, utilizando visualizações interativas e textos explicativos gerados automaticamente.
-
-A solução é desenvolvida com **Streamlit**, utilizando **modelos de NLP open source** e **visualização de dados em tempo real**.
-
-🔗 Acesse a versão provisória: [https://relatorioipea-mds.streamlit.app](https://relatorioipea-mds.streamlit.app)  
-🌿 Branch ativa: `dev` (atualize os arquivos nela para refletir no app).
-
-📓 Documentação das etapas de densenvolvimento do projeto: [https://miro.com/app/board/uXjVIJxt3qo=/]
-
----
-
-## 🚀 Funcionalidades
-
-- Visualização interativa de dados financeiros.
-- Geração automática de relatórios em linguagem natural (NLP).
-- Resumos automatizados de tendências e alertas para gestores.
-- Interface simples e acessível com foco na experiência do usuário.
-- Uso exclusivo de tecnologias **open source**.
-
----
-
-## 🧰 Tecnologias Utilizadas
-
-- **Python**
-- **Streamlit**
-- **Pandas / NumPy**
-- **Plotly / Matplotlib**
-- **Modelos NLP (BERTTopic, spaCy, etc.)**
-
----
-
-## 🖥️ Como Rodar Localmente
-
-Para executar o projeto localmente, siga esta sequência de comandos no terminal:
-
-```bash
-# 1. Instale as dependências do projeto
-python setup.py install
-
-# 2. Realize a coleta de dados iniciais
-python data_collector.py
-
-# 3. Execute a aplicação no navegador com Streamlit
-streamlit run main.py
