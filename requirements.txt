@@ -1,3 +1,5 @@
+# python packages required:
+
 pandas
 numpy
 matplotlib
@@ -11,4 +13,4 @@ prophet
 fpdf2
 cmdstanpy
 reportlab
-kaleidogit
+kaleido
