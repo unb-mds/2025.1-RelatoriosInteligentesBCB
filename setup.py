@@ -19,7 +19,7 @@ def install_requirements():
         "cmdstanpy",
         "reportlab",
         "requests",
-        "kaleidogit"
+        "kaleido"
     ]
     for package in packages:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
