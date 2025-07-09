@@ -4,11 +4,11 @@ import pandas as pd
 from components.indicadores import indicator_names, load_data
 
 def dashboard_page():
-    st.title("Dashboard Econômico - Dados do Banco Central do Brasil")
+    st.title("📈 Dashboard Econômico - Dados do Banco Central do Brasil")
 
-    st.sidebar.subheader("Indicadores")
+    st.sidebar.subheader(":blue[Indicadores]")
     indicators = st.sidebar.multiselect(
-        "Selecione os indicadores para visualizar",
+        ":blue[Selecione os indicadores para visualizar]",
         list(indicator_names.keys()),
         default=['ipca'],
         format_func=lambda x: indicator_names.get(x, x)

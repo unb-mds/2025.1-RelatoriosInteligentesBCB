@@ -1,6 +1,6 @@
-# 📊 Relatórios do IPEA
+# 📊 Relatórios Inteligentes do BCB
 
-O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do IPEA**, por meio de uma **interface intuitiva em Streamlit**. A aplicação é voltada para **gestores públicos do IPEA**, **pesquisadores** e **universitários**, oferecendo uma experiência acessível e analítica.
+O foco deste projeto é a **geração automática de relatórios inteligentes** para análise dos **dados financeiros do BCB**, por meio de uma **interface intuitiva em Streamlit**. A aplicação é voltada para **gestores públicos do IPEA**, **pesquisadores** e **universitários**, oferecendo uma experiência acessível e analítica.
 
 🔗 Acesse a versão provisória: [https://relatorioipea-mds.streamlit.app](https://relatorioipea-mds.streamlit.app)  
 🌿 Branch ativa: `dev` (atualize os arquivos nela para refletir no app).
@@ -14,7 +14,8 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - Python 3.10+
 - Streamlit
 - SQLite
-- Pandas, Scikit-learn, Plotly
+- Pandas, Scikit-learn, Plotly, Prophet
+- DeepSeek AI
 - Docker (opcional)
 
 ---
@@ -25,6 +26,7 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
 - Git
 - pip (gerenciador de pacotes Python)
 - (Opcional) Docker
+- (Opcional) Chave da API DeepSeek
 
 ---
 
@@ -77,6 +79,18 @@ O foco deste projeto é a **geração automática de relatórios inteligentes** 
     - Coleta de dados;
     - Visualização no dashboard;
     - Previsões com modelos de machine learning.
+
+---
+
+## 🐳 Relatórios com IA DeepSeek
+
+Caso deseja gerar relatórios personalizados com IA da DeepSeek, é necessário ter uma chave particular de sua API. Com ela em mãos, siga os seguintes passos:
+
+- Crie uma pasta chamada ".streamlit" na pasta principal do repositório;
+- Crie um arquivo chamado "secrets.toml" dentro da pasta criada;
+- Escreva o seguinte comando com sua chave dentro do arquivo criado:
+
+        DEEPSEEK_API_KEY = "INSIRA SUA CHAVE AQUI"
 
 ---
 

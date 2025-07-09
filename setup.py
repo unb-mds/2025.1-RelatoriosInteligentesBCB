@@ -17,6 +17,8 @@ def install_requirements():
         "prophet",
         "fpdf2",
         "cmdstanpy",
+        "reportlab",
+        "requests",
         "kaleidogit"
     ]
     for package in packages:
